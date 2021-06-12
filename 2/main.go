@@ -15,10 +15,10 @@ func main() {
 	go loadAll(ctx, &wg)
 
 	var min, max, ave time.Duration
-	t0 := time.Now()
 	n := 0
 
 	for ctx.Err() == nil {
+		t0 := time.Now()
 		d := time.Since(t0)
 		ave += d
 		n++
@@ -28,7 +28,6 @@ func main() {
 		if d > max {
 			max = d
 		}
-		t0 = time.Now()
 	}
 
 	wg.Wait()
