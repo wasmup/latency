@@ -35,6 +35,7 @@ func main() {
 	var min, max, ave time.Duration
 	t0 := time.Now()
 	n := 0
+
 	for ctx.Err() == nil {
 		d := time.Since(t0)
 		ave += d
@@ -82,18 +83,18 @@ func loadAll(ctx context.Context, wg *sync.WaitGroup) {
 ```sh
 go run .
 
-6044097
-5813540
-6140386
-5834088
-5832977
-5845063
-5665101
-5763578
-n 5464038
-min 33ns
-ave 56ns
-max 270.645µs
+5650519
+5571047
+5739384
+5686872
+5668563
+5694935
+5719850
+5718231
+n 5161255
+min 23ns
+ave 58ns
+max 306.238µs
 ```
 
 
@@ -116,6 +117,7 @@ func main() {
 
 	var min, max, ave time.Duration
 	n := 0
+
 	for ctx.Err() == nil {
 		t0 := time.Now()
 		d := time.Since(t0)
